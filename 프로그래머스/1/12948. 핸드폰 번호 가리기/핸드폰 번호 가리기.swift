@@ -1,11 +1,15 @@
-func solution(_ phoneNumber:String) -> String {
-    
-    var answer = ""
-    
-    for i in 0..<phoneNumber.count-4{
-        answer += "*"
+func solution(_ phone_number:String) -> String {
+
+    var result = ""
+    for (index, value) in phone_number.enumerated()
+    {
+        if(index > phone_number.count - 5)
+        {
+            result += String(value)
+        }else{
+            result += "*"
+        }
     }
-    
-    answer += phoneNumber.suffix(4)
-    return answer
+
+    return result
 }
